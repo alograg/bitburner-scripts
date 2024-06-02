@@ -9,8 +9,9 @@ export async function main(ns) {
         ns.tprint(`> run ${ns.getScriptName()}`);
         return;
     }
-    
-    const doc = document; // This is expensive! (25GB RAM) Perhaps there's a way around it? ;)
+
+    const doc = document;
+    // This is expensive! (25GB RAM) Perhaps there's a way around it? ;)
     const hook0 = doc.getElementById('overview-extra-hook-0');
     const hook1 = doc.getElementById('overview-extra-hook-1');
     while (true) {
@@ -28,7 +29,8 @@ export async function main(ns) {
             // Now drop it into the placeholder elements
             hook0.innerText = headers.join(" \n");
             hook1.innerText = values.join("\n");
-        } catch (err) { // This might come in handy later
+        } catch (err) {
+            // This might come in handy later
             ns.print("ERROR: Update Skipped: " + String(err));
         }
         await ns.sleep(1000);

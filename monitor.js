@@ -1,8 +1,5 @@
 export async function main(ns) {
-    const flags = ns.flags([
-        ['refreshrate', 200],
-        ['help', false],
-    ])
+    const flags = ns.flags([['refreshrate', 200], ['help', false], ])
     if (flags._.length === 0 || flags.help) {
         ns.tprint("This script helps visualize the money and security of a server.");
         ns.tprint(`USAGE: run ${ns.getScriptName()} SERVER_NAME`);
@@ -15,7 +12,8 @@ export async function main(ns) {
     while (true) {
         const server = flags._[0];
         let money = ns.getServerMoneyAvailable(server);
-        if (money === 0) money = 1;
+        if (money === 0)
+            money = 1;
         const maxMoney = ns.getServerMaxMoney(server);
         const minSec = ns.getServerMinSecurityLevel(server);
         const sec = ns.getServerSecurityLevel(server);

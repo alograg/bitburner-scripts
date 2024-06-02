@@ -5,7 +5,7 @@ function scan(ns, parent, server, list) {
             continue;
         }
         list.push(child);
-        
+
         scan(ns, server, child, list);
     }
 }
@@ -18,7 +18,7 @@ export function list_servers(ns) {
 
 /** @param {NS} ns **/
 export async function main(ns) {
-	const args = ns.flags([["help", false]]);
+    const args = ns.flags([["help", false]]);
     if (args.help) {
         ns.tprint("This script lists all servers on which you can run scripts.");
         ns.tprint(`Usage: run ${ns.getScriptName()}`);
@@ -27,10 +27,10 @@ export async function main(ns) {
         return;
     }
 
-	const servers = list_servers(ns).filter(s => ns.hasRootAccess(s)).concat(['home']);
-    for(const server of servers) {
+    const servers = list_servers(ns).filter(s=>ns.hasRootAccess(s)).concat(['home']);
+    for (const server of servers) {
         const used = ns.getServerUsedRam(server);
         const max = ns.getServerMaxRam(server);
-        ns.tprint(`${server} is opened. ${used} GB / ${max} GB (${(100*used/max).toFixed(2)}%)`)
+        ns.tprint(`${server} is opened. ${used} GB / ${max} GB (${(100 * used / max).toFixed(2)}%)`)
     }
 }

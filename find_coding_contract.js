@@ -5,7 +5,7 @@ function scan(ns, parent, server, list) {
             continue;
         }
         list.push(child);
-        
+
         scan(ns, server, child, list);
     }
 }
@@ -28,9 +28,9 @@ export async function main(ns) {
 
     let servers = list_servers(ns);
     const boughtServers = ns.getPurchasedServers(ns);
-    servers = servers.filter(s => !boughtServers.includes(s));
-    const hostname = servers.find(s => ns.ls(s).find(f => f.endsWith(".cct")))
-    if(!hostname) {
+    servers = servers.filter(s=>!boughtServers.includes(s));
+    const hostname = servers.find(s=>ns.ls(s).find(f=>f.endsWith(".cct")))
+    if (!hostname) {
         ns.tprint("No coding contract found.");
         return;
     }
