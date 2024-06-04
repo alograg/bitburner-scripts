@@ -18,9 +18,12 @@ export async function main(ns) {
     while (true) {
         localStorage.setItem('hackTarget', JSON.stringify(hackTarget));
         await ns.sleep(hackTarget[`${hackTarget.task}Time`]);
-        if (ns.getServerSecurityLevel(hostname) > hackTarget.minSecurity) {
+        let currentSecurityLevel = ns.getServerSecurityLevel(hackTarget.id);
+        let currentMoney = ns.getServerMoneyAvailable(hackTarget.id);
+        self.console.table([[currentSecurityLevel, hackTarget.minSecurity], [currentMoney, (hackTarget.maxMoney * 0.9)]]);
+        if (currentSecurityLevel > hackTarget.minSecurity) {
             hackTarget.task = 'weaken';
-        } else if (ns.getServerMoneyAvailable(hostname) < (hackTarget.maxMoney * 0.9)) {
+        } else if (currentMoney < (hackTarget.maxMoney * 0.9)) {
             hackTarget.task = 'growing';
         } else {
             hackTarget.task = 'hacking';

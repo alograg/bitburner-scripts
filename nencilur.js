@@ -1,13 +1,20 @@
 // Sanguijuela
 /** @param {NS} ns **/
 export async function main(ns) {
+    let hackTarget;
     while (true) {
-        if (ns.getServerSecurityLevel(hostname) > ns.getServerMinSecurityLevel(hostname)) {
-            await ns.weaken(hostname);
-        } else if (ns.getServerMoneyAvailable(hostname) < ns.getServerMaxMoney(hostname)) {
-            await ns.grow(hostname);
-        } else {
-            await ns.hack(hostname);
+        hackTarget = JSON.parse(localStorage.getItem('hackTarget'));
+        switch (hackTarget.task) {
+        case 'weaken':
+            await ns.weaken(hackTarget.id);
+            break;
+        case 'growing':
+            await ns.grow(hackTarget.id);
+            break;
+        case 'hacking':
+            await ns.hack(hackTarget.id);
+            break;
         }
+        await ns.sleep(hackTarget[`${hackTarget.task}Time`] * 1.1);
     }
 }
