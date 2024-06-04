@@ -5,13 +5,13 @@ const home = 'home';
 const script = 'tirion_gwaun.js';
 
 export async function main(ns) {
-    const serverList = list_servers(ns);
-    localStorage.setItem('servers', JSON.stringify(serverList));
-    serverList.forEach((host)=>storeInfo(ns, host));
+    const serverDB = list_servers(ns).map((host)=>storeInfo(ns, host));
+    localStorage.setItem('serverDB', JSON.stringify(serverDB));
 }
 
 function storeInfo(ns, iAm) {
     const myData = {
+        id: iAm,
         growingTime : ns.getGrowTime(iAm),
         hackingTime:ns.getHackTime(iAm),
         weakenTime:ns.getWeakenTime(iAm),
@@ -22,8 +22,7 @@ function storeInfo(ns, iAm) {
         requiredHacking:ns.getServerRequiredHackingLevel(iAm),
         hasRoot: ns.hasRootAccess(iAm),
     };
-    localStorage.setItem(iAm, JSON.stringify(myData));
-    self.console.groupEnd(iAm);
+    return myData;
 }
 
 function scan(ns, parent, server, list) {
