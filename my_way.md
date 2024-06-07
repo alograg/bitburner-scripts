@@ -4,7 +4,7 @@
 2. Sigue la documentacion de Beginners guide
 3. Abir un servidor de sync:
    ```shell
-   $ docker run --rm -it -p 12525:12525 -v $PWD:/scripts -w /scripts node npx -y github:bitburner-official/bitburner-filesync
+   $ docker run --rm -p 12525:12525 -v $PWD:/scripts -w /scripts node npx -y github:bitburner-official/bitburner-filesync
    ```
 5. Crear mi propio gusano que instale virus
 6. Creacion de script de compra de servidores
@@ -40,3 +40,4 @@ onar.js : Funciones utilitarias
 glannas.js : Remueve todos las ejecuciones
 umenya.js : Al lanzarce comprueba la posibilidad de comprar un servidor asta el maximo posible.
 umenian.js : renombra todos los servidores comprados
+docker run -d --name bitburner-sync -p 12525:12525 -v $PWD:/scripts -w /scripts node npx -y github:bitburner-official/bitburner-filesync
