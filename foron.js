@@ -14,9 +14,10 @@ export async function main(ns) {
 		ns.hacknet.purchaseNode();
 	}
 	for(i=ns.hacknet.numNodes()-1;i>=0;i--) {
-		ns.hacknet.upgradeLevel(i,maxLevel);
-		ns.hacknet.upgradeRam(i,maxRam);
-		ns.hacknet.upgradeCore(i,maxCore);
+		ns.printf('----- Node: %d',i);
+		ns.printf('level: %s',ns.hacknet.upgradeLevel(i,maxLevel));
+		ns.printf('ram %s',ns.hacknet.upgradeRam(i,maxRam));
+		ns.printf('cores %s',ns.hacknet.upgradeCore(i,maxCore));
 	}
 	//self.console.log(ns.hacknet.maxNumNodes());
 	//self.console.log(ns.hacknet.numNodes());

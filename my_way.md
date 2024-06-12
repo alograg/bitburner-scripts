@@ -4,7 +4,7 @@
 2. Sigue la documentacion de Beginners guide
 3. Abir un servidor de sync:
    ```shell
-   $ docker run --rm -p 12525:12525 -v $PWD:/scripts -w /scripts node npx -y github:bitburner-official/bitburner-filesync
+   $ docker run -d --name bitburner-sync -p 12525:12525 -v $PWD:/scripts -w /scripts node npx -y github:bitburner-official/bitburner-filesync
    ```
 5. Crear mi propio gusano que instale virus
 6. Creacion de script de compra de servidores
@@ -31,13 +31,17 @@ opened_servers.js
 
 ### Nómen na, ná i ná
 
+alias install_exes="home;connect darkweb;buy BruteSSH.exe;buy FTPCrack.exe;buy relaySMTP.exe;buy HTTPWorm.exe;buy SQLInject.exe;buy AutoLink.exe;buy DeepscanV1.exe;buy DeepscanV2.exe; buy ServerProfiler.exe; buy Formulas.exe;home;"
+alias breakServer="run BruteSSH.exe;run FTPCrack.exe;run relaySMTP.exe;run HTTPWorm.exe;run SQLInject.exe"
+
+mana.js : Plantilla de script
 glannas.js : Remueve todos las ejecuciones
 tirion_gwaun.js : Recopila los datos de la red
 auleonto.js : Genera las estadisticas y asigna objetivos de hackeo.
 meneg_taur.js : Entra a los servidores los ataca y deja un gusano zombificador
 nencilur.js : Sanguijuela zombificadora
 onar.js : Funciones utilitarias
-glannas.js : Remueve todos las ejecuciones
 umenya.js : Al lanzarce comprueba la posibilidad de comprar un servidor asta el maximo posible.
 umenian.js : renombra todos los servidores comprados
-docker run -d --name bitburner-sync -p 12525:12525 -v $PWD:/scripts -w /scripts node npx -y github:bitburner-official/bitburner-filesync
+foron.js : Compra nodos de HackNet
+
