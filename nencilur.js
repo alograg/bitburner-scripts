@@ -8,15 +8,7 @@ export async function main(ns) {
     let hackTarget, lastAction, lastResult;
     while (true) {
         let jsonTarget = localStorage.getItem('hackTarget');
-        if (jsonTarget) {
-            ns.rm(targetJson);
-            hackTarget = JSON.parse(localStorage.getItem('hackTarget'));
-            ns.write(targetJson, jsonTarget);
-        } else {
-            hackTarget = JSON.parse(ns.read(targetJson)) || {
-                id: ns.args[0]
-            };
-        }
+        hackTarget = JSON.parse(localStorage.getItem('hackTarget'));
         if (!hackTarget.id) {
             await ns.sleep(1000 * 5);
             continue;
@@ -51,3 +43,11 @@ export async function main(ns) {
         lastAction = hackTarget.task;
     }
 }
+/**
+ * TODO:
+ * Ejecutar cuando el nivel de seguridad esta al minimo
+ * Hack cuando maxMoney y minSecurity
+ * Grow despues de Hack y minSecurity
+ * Weak despues de Hack y Grow y no minSecurity
+ **/
+

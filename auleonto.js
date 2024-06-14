@@ -9,8 +9,6 @@ export async function main(ns) {
         self.console.log("auleonto: active");
         let hackTarget = scanForHackingTarget(ns);
         let waitForSearchTarget = Math.max(hackTarget.growingTime, hackTarget.hackingTime, hackTarget.weakenTime);
-        let waitForChangeAction = Math.min(hackTarget.growingTime, hackTarget.hackingTime, hackTarget.weakenTime);
-        await ns.sleep(waitForChangeAction);
         setHackingActionForTarget(ns, hackTarget);
         await ns.sleep(waitForSearchTarget);
     }
