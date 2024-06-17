@@ -8,6 +8,8 @@
    ```
 5. Crear mi propio gusano que instale virus
 6. Creacion de script de compra de servidores
+    1. Comprar servidores de 8m de ram
+    2. Comprar Nodos evaluando que es mejor, si comprar un nodo o incrementar el nivel
 7. 
 
 ## Files
@@ -28,6 +30,14 @@ find_coding_contract.js
 find_server.js
 monitor.js
 opened_servers.js
+
+### moriakice scripts
+
+ref: https://github.com/moriakaice/bitburner
+
+Maneja constantes en le localStorage muy interesante
+Su crawler tiene un buen manejo de localstorage
+Tiene una buen script de control de hacking, le falta escoger mejor el objetivo
 
 ### Nómen na, ná i ná
 
