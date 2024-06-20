@@ -36,8 +36,11 @@ opened_servers.js
 ref: https://github.com/moriakaice/bitburner
 
 Maneja constantes en le localStorage muy interesante
-Su crawler tiene un buen manejo de localstorage
-Tiene una buen script de control de hacking, le falta escoger mejor el objetivo
+Su crawleri/spider tiene un buen manejo de localstorage
+Tiene una buen script de control de hacking, le falta escoger mejor el objetivo y le falla en los tiempos de espera
+Tiene las soluciones a los contratos de hacking, pero pide mucha memoria
+Usa spawn para ceder el paso a otro script y oprimizar el uso de memoria
+
 
 ### Nómen na, ná i ná
 
